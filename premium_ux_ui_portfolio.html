@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Your Name | UX/UI & Product Designer Portfolio</title>
+  <meta
+    name="description"
+    content="UX/UI and Product Designer portfolio for case studies, product strategy, ecommerce CRO, dashboards, mobile apps, websites, and design systems."
+  />
+
+  <style>
+    :root {
+      --bg: #070A12;
+      --bg-soft: #0D1220;
+      --surface: rgba(255, 255, 255, 0.075);
+      --surface-strong: rgba(255, 255, 255, 0.12);
+      --text: #F7F8FB;
+      --muted: #AAB2C5;
+      --line: rgba(255, 255, 255, 0.12);
+      --brand: #8B5CF6;
+      --brand-2: #22D3EE;
+      --brand-3: #34D399;
+      --danger: #FB7185;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --container: 1180px;
+    }
+
+    [data-theme="light"] {
+      --bg: #F6F7FB;
+      --bg-soft: #FFFFFF;
+      --surface: rgba(10, 17, 32, 0.055);
+      --surface-strong: rgba(10, 17, 32, 0.09);
+      --text: #0A1120;
+      --muted: #586174;
+      --line: rgba(10, 17, 32, 0.12);
+      --shadow: 0 30px 80px rgba(10, 17, 32, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(139, 92, 246, 0.24), transparent 34rem),
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.16), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-sm {
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--brand-2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.8;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 44px;
+    }
+
+    .section-head.center {
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .section-head.center .eyebrow {
+      justify-content: center;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 18px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 19px);
+      max-width: 680px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      backdrop-filter: blur(16px);
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--brand-3);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.12);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 850;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: #07101B;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand-3));
+      box-shadow: 0 18px 40px rgba(34, 211, 238, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 55px rgba(34, 211, 238, 0.28);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-strong);
+      transform: translateY(-3px);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 18px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .nav {
+      pointer-events: auto;
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid var(--line);
+      background: rgba(7, 10, 18, 0.72);
+      backdrop-filter: blur(18px);
+      border-radius: 999px;
+      padding: 10px 12px 10px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    [data-theme="light"] .nav {
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #07101B;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand-3));
+      font-weight: 950;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      padding: 10px 12px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .icon-btn:hover {
+      background: var(--surface-strong);
+      transform: translateY(-2px);
+    }
+
+    .menu-btn {
+      display: none;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      padding: 145px 0 80px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(46px, 7vw, 104px);
+      line-height: 0.9;
+      letter-spacing: -0.075em;
+      margin: 22px 0 24px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--brand-2), var(--brand-3), var(--brand));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      max-width: 660px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 650px;
+    }
+
+    .meta-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 18px;
+      padding: 16px;
+      backdrop-filter: blur(16px);
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+    }
+
+    .meta-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .portfolio-preview {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 16px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      transform: rotate(2deg);
+    }
+
+    .preview-screen {
+      min-height: 560px;
+      border-radius: 24px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(139, 92, 246, 0.18), transparent 42%),
+        var(--bg-soft);
+      border: 1px solid var(--line);
+      position: relative;
+    }
+
+    .preview-topbar {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .preview-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--surface-strong);
+    }
+
+    .preview-content {
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .preview-hero {
+      min-height: 170px;
+      border-radius: 20px;
+      padding: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.4), transparent 12rem),
+        linear-gradient(135deg, rgba(139, 92, 246, 0.34), rgba(34, 211, 238, 0.08));
+      border: 1px solid var(--line);
+    }
+
+    .preview-line {
+      height: 12px;
+      width: 70%;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .preview-line.short {
+      width: 42%;
+    }
+
+    .preview-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .preview-card {
+      min-height: 132px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 16px;
+    }
+
+    .floating-note {
+      position: absolute;
+      right: -20px;
+      bottom: 50px;
+      max-width: 220px;
+      border: 1px solid var(--line);
+      background: rgba(7, 10, 18, 0.82);
+      backdrop-filter: blur(18px);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      transform: rotate(-6deg);
+    }
+
+    [data-theme="light"] .floating-note {
+      background: rgba(255, 255, 255, 0.88);
+    }
+
+    .floating-note strong {
+      display: block;
+      font-size: 28px;
+      letter-spacing: -0.06em;
+      line-height: 1;
+      color: var(--brand-3);
+      margin-bottom: 8px;
+    }
+
+    .floating-note span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .marquee {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-item {
+      padding: 22px 28px;
+      color: var(--muted);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .work-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      padding: 11px 15px;
+      border-radius: 999px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: #07101B;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand-3));
+      border-color: transparent;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      grid-column: span 6;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.3s ease;
+      backdrop-filter: blur(16px);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      background: var(--surface-strong);
+    }
+
+    .project-card.large {
+      grid-column: span 12;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: stretch;
+    }
+
+    .project-media {
+      min-height: 360px;
+      background:
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.32), transparent 16rem),
+        radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.28), transparent 16rem),
+        linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02));
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-card.large .project-media {
+      border-bottom: 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .mockup {
+      width: min(430px, 100%);
+      min-height: 270px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.035));
+      padding: 16px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .mockup-inner {
+      height: 100%;
+      min-height: 238px;
+      border-radius: 20px;
+      border: 1px dashed rgba(255, 255, 255, 0.28);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 850;
+      padding: 24px;
+    }
+
+    [data-theme="light"] .mockup-inner {
+      border-color: rgba(10, 17, 32, 0.2);
+    }
+
+    .project-body {
+      padding: 28px;
+      display: grid;
+      align-content: space-between;
+      gap: 28px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .project-title {
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      margin-bottom: 14px;
+    }
+
+    .project-card:not(.large) .project-title {
+      font-size: 30px;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .project-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .project-stat {
+      padding: 18px;
+      border-right: 1px solid var(--line);
+    }
+
+    .project-stat:last-child {
+      border-right: 0;
+    }
+
+    .project-stat strong {
+      display: block;
+      font-size: 23px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+      color: var(--brand-3);
+    }
+
+    .project-stat span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .case-step {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      transition: 0.25s ease;
+    }
+
+    .case-step:hover {
+      transform: translateY(-5px);
+      background: var(--surface-strong);
+    }
+
+    .case-number {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #07101B;
+      background: linear-gradient(135deg, var(--brand-2), var(--brand-3));
+      font-weight: 950;
+      margin-bottom: 22px;
+    }
+
+    .case-step h3 {
+      font-size: 22px;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .case-step p {
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      min-height: 250px;
+      display: grid;
+      align-content: space-between;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      background: var(--surface-strong);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(139, 92, 246, 0.2));
+      border: 1px solid var(--line);
+      margin-bottom: 28px;
+      font-size: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .profile-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .profile-photo {
+      aspect-ratio: 1 / 1.08;
+      border-radius: 26px;
+      border: 1px dashed var(--line);
+      background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.24), transparent 16rem),
+        linear-gradient(135deg, rgba(139, 92, 246, 0.22), rgba(255, 255, 255, 0.05));
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 850;
+      padding: 28px;
+      margin-bottom: 18px;
+    }
+
+    .profile-card h3 {
+      font-size: 28px;
+      letter-spacing: -0.05em;
+      margin-bottom: 6px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+    }
+
+    .about-content {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+    }
+
+    .about-content h2 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin-bottom: 22px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .testimonial {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+    }
+
+    .quote {
+      color: var(--text);
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      margin-bottom: 26px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 950;
+    }
+
+    .person strong {
+      display: block;
+      line-height: 1.1;
+    }
+
+    .person span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .contact {
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.22), transparent 24rem),
+        radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.2), transparent 24rem),
+        var(--surface);
+      border-radius: 40px;
+      padding: clamp(28px, 6vw, 70px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(40px, 6vw, 84px);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 19px;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .contact-panel {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 28px;
+      padding: 22px;
+    }
+
+    .contact-row {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-row span {
+      color: var(--muted);
+      display: block;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .contact-row strong {
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .site-footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        border-radius: 24px;
+      }
+
+      .menu-btn {
+        display: grid;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+        border: 1px solid var(--line);
+        background: var(--bg-soft);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 14px;
+      }
+
+      .hero-grid,
+      .project-card.large,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card.large .project-media {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .case-grid,
+      .services-grid,
+      .testimonials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .floating-note {
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .hero-meta,
+      .project-stats,
+      .case-grid,
+      .services-grid,
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card,
+      .project-card.large {
+        grid-column: span 1;
+      }
+
+      .preview-screen {
+        min-height: 430px;
+      }
+
+      .project-media {
+        min-height: 280px;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .contact {
+        border-radius: 28px;
+      }
+
+      .floating-note {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 16px;
+        transform: none;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#home" class="logo" aria-label="Go to homepage">
+        <span class="logo-mark">YN</span>
+        <span>Your Name</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#services">Expertise</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle color theme">◐</button>
+        <a href="#contact" class="btn btn-primary">Hire Me</a>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            Available for UX/UI, product design, and ecommerce CRO projects
+          </div>
+
+          <h1>
+            I design products that look premium and <span>convert better.</span>
+          </h1>
+
+          <p class="hero-copy">
+            I help startups, SaaS companies, and ecommerce brands turn unclear digital experiences into simple, persuasive, and revenue-focused interfaces.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-primary">View Case Studies</a>
+            <a href="#contact" class="btn btn-secondary">Book a Project Call</a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-card">
+              <strong>32%</strong>
+              <span>Placeholder conversion lift</span>
+            </div>
+            <div class="meta-card">
+              <strong>18+</strong>
+              <span>Products and websites designed</span>
+            </div>
+            <div class="meta-card">
+              <strong>6 yrs</strong>
+              <span>Design and development experience</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="portfolio-preview">
+            <div class="preview-screen">
+              <div class="preview-topbar">
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+                <span class="preview-dot"></span>
+              </div>
+
+              <div class="preview-content">
+                <div class="preview-hero">
+                  <div class="preview-line"></div>
+                  <div class="preview-line short"></div>
+                </div>
+
+                <div class="preview-cards">
+                  <div class="preview-card">
+                    <div class="preview-line"></div>
+                    <div class="preview-line short"></div>
+                  </div>
+                  <div class="preview-card">
+                    <div class="preview-line"></div>
+                    <div class="preview-line short"></div>
+                  </div>
+                  <div class="preview-card">
+                    <div class="preview-line"></div>
+                    <div class="preview-line short"></div>
+                  </div>
+                  <div class="preview-card">
+                    <div class="preview-line"></div>
+                    <div class="preview-line short"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-note">
+            <strong>4.9/5</strong>
+            <span>Placeholder client rating after redesign and product experience work.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Capabilities">
+      <div class="marquee-track">
+        <div class="marquee-item">UX Research</div>
+        <div class="marquee-item">UI Design</div>
+        <div class="marquee-item">Product Strategy</div>
+        <div class="marquee-item">Design Systems</div>
+        <div class="marquee-item">SaaS Dashboards</div>
+        <div class="marquee-item">Mobile Apps</div>
+        <div class="marquee-item">Shopify CRO</div>
+        <div class="marquee-item">Landing Pages</div>
+
+        <div class="marquee-item">UX Research</div>
+        <div class="marquee-item">UI Design</div>
+        <div class="marquee-item">Product Strategy</div>
+        <div class="marquee-item">Design Systems</div>
+        <div class="marquee-item">SaaS Dashboards</div>
+        <div class="marquee-item">Mobile Apps</div>
+        <div class="marquee-item">Shopify CRO</div>
+        <div class="marquee-item">Landing Pages</div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Selected Work</div>
+          <h2 class="section-title">Case studies built to show thinking, taste, and business impact.</h2>
+          <p class="section-copy">
+            Replace these projects with your real work. Each card is written to show the problem, your design decision, and the result recruiters or clients care about.
+          </p>
+        </div>
+
+        <div class="work-toolbar reveal">
+          <div class="filters" aria-label="Project filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ecommerce">Ecommerce</button>
+            <button class="filter-btn" data-filter="saas">SaaS</button>
+            <button class="filter-btn" data-filter="mobile">Mobile App</button>
+          </div>
+
+          <a href="#contact" class="btn btn-secondary">Need a redesign?</a>
+        </div>
+
+        <div class="work-grid">
+          <article class="project-card large reveal" data-category="ecommerce">
+            <div class="project-media">
+              <div class="mockup">
+                <div class="mockup-inner">
+                  Replace with homepage before and after screenshot
+                </div>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <div class="project-tags">
+                  <span class="tag">Shopify CRO</span>
+                  <span class="tag">Homepage Redesign</span>
+                  <span class="tag">UX Audit</span>
+                </div>
+
+                <h3 class="project-title">Turning a cluttered ecommerce homepage into a clear buying journey.</h3>
+
+                <p class="project-desc">
+                  The original page had weak hierarchy, unclear value proposition, and buried social proof. I rebuilt the above-the-fold experience, clarified the offer, tightened the product story, and created stronger decision paths for new visitors.
+                </p>
+
+                <a href="#" class="btn btn-primary">View Full Case Study</a>
+              </div>
+
+              <div class="project-stats">
+                <div class="project-stat">
+                  <strong>+21%</strong>
+                  <span>Add to cart placeholder</span>
+                </div>
+                <div class="project-stat">
+                  <strong>+14%</strong>
+                  <span>Product page clicks</span>
+                </div>
+                <div class="project-stat">
+                  <strong>-28%</strong>
+                  <span>Scroll confusion</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="saas">
+            <div class="project-media">
+              <div class="mockup">
+                <div class="mockup-inner">
+                  Replace with SaaS dashboard screenshot
+                </div>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <div class="project-tags">
+                  <span class="tag">SaaS</span>
+                  <span class="tag">Dashboard</span>
+                  <span class="tag">Design System</span>
+                </div>
+
+                <h3 class="project-title">A dashboard experience for faster decision-making.</h3>
+
+                <p class="project-desc">
+                  Designed a clean dashboard system with clearer data grouping, better empty states, stronger visual hierarchy, and reusable components for scale.
+                </p>
+
+                <a href="#" class="btn btn-secondary">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="mobile">
+            <div class="project-media">
+              <div class="mockup">
+                <div class="mockup-inner">
+                  Replace with mobile app screens
+                </div>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <div class="project-tags">
+                  <span class="tag">Mobile App</span>
+                  <span class="tag">UX Flow</span>
+                  <span class="tag">Prototype</span>
+                </div>
+
+                <h3 class="project-title">A mobile onboarding flow that reduces user hesitation.</h3>
+
+                <p class="project-desc">
+                  Created a simpler first-use experience with fewer decision points, benefit-led screens, and a guided path to activation.
+                </p>
+
+                <a href="#" class="btn btn-secondary">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="ecommerce">
+            <div class="project-media">
+              <div class="mockup">
+                <div class="mockup-inner">
+                  Replace with product page screenshot
+                </div>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <div class="project-tags">
+                  <span class="tag">Product Page</span>
+                  <span class="tag">CRO</span>
+                  <span class="tag">Copy Hierarchy</span>
+                </div>
+
+                <h3 class="project-title">Product page redesign for stronger purchase confidence.</h3>
+
+                <p class="project-desc">
+                  Reworked the product story, benefits, objections, reviews, FAQ, and CTA structure to make the page easier to understand and easier to buy from.
+                </p>
+
+                <a href="#" class="btn btn-secondary">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="saas">
+            <div class="project-media">
+              <div class="mockup">
+                <div class="mockup-inner">
+                  Replace with landing page screenshot
+                </div>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <div class="project-tags">
+                  <span class="tag">Landing Page</span>
+                  <span class="tag">SaaS</span>
+                  <span class="tag">Conversion Copy</span>
+                </div>
+
+                <h3 class="project-title">A SaaS landing page built around clarity and action.</h3>
+
+                <p class="project-desc">
+                  Designed a landing page that explains the product quickly, builds trust above the fold, and moves users toward signup without unnecessary friction.
+                </p>
+
+                <a href="#" class="btn btn-secondary">View Project</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="eyebrow">My Process</div>
+          <h2 class="section-title">A simple process that protects the user and the business goal.</h2>
+          <p class="section-copy">
+            This section helps recruiters and clients see that you do not just make screens. You solve problems with structure.
+          </p>
+        </div>
+
+        <div class="case-grid">
+          <div class="case-step reveal">
+            <div class="case-number">01</div>
+            <h3>Diagnose</h3>
+            <p>
+              I audit the current experience, review user behavior, map friction points, and define what the page or product needs to achieve.
+            </p>
+          </div>
+
+          <div class="case-step reveal">
+            <div class="case-number">02</div>
+            <h3>Structure</h3>
+            <p>
+              I create user flows, wireframes, hierarchy, content order, and page logic before moving into polished interface design.
+            </p>
+          </div>
+
+          <div class="case-step reveal">
+            <div class="case-number">03</div>
+            <h3>Design</h3>
+            <p>
+              I design clean, responsive, high-trust interfaces with strong spacing, typography, visual hierarchy, and clear CTAs.
+            </p>
+          </div>
+
+          <div class="case-step reveal">
+            <div class="case-number">04</div>
+            <h3>Prototype</h3>
+            <p>
+              I connect the experience into clickable prototypes so stakeholders can understand flow, interaction, and user intent.
+            </p>
+          </div>
+
+          <div class="case-step reveal">
+            <div class="case-number">05</div>
+            <h3>Validate</h3>
+            <p>
+              I test assumptions using feedback, analytics, heatmaps, recordings, or usability insights depending on project maturity.
+            </p>
+          </div>
+
+          <div class="case-step reveal">
+            <div class="case-number">06</div>
+            <h3>Handoff</h3>
+            <p>
+              I prepare clean files, components, annotations, responsive rules, and developer-ready design specs for implementation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Expertise</div>
+          <h2 class="section-title">What I can help you design.</h2>
+          <p class="section-copy">
+            Edit these based on your strongest services. For a UX/UI portfolio, keep your services clear and specific.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div>
+              <div class="service-icon">✦</div>
+              <h3>Website UX/UI Design</h3>
+              <p>High-converting websites, landing pages, service pages, and portfolio experiences.</p>
+            </div>
+          </div>
+
+          <div class="service-card reveal">
+            <div>
+              <div class="service-icon">◈</div>
+              <h3>Ecommerce CRO Design</h3>
+              <p>Homepage, product page, collection page, cart, upsell, and checkout experience improvements.</p>
+            </div>
+          </div>
+
+          <div class="service-card reveal">
+            <div>
+              <div class="service-icon">▣</div>
+              <h3>SaaS Product Design</h3>
+              <p>Dashboards, onboarding flows, account areas, empty states, settings pages, and core product flows.</p>
+            </div>
+          </div>
+
+          <div class="service-card reveal">
+            <div>
+              <div class="service-icon">◎</div>
+              <h3>Mobile App Design</h3>
+              <p>Mobile app screens, UX flows, prototypes, design systems, and conversion-focused onboarding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <aside class="profile-card reveal">
+            <div class="profile-photo">
+              Replace with your portrait image
+              <br />
+              Example: assets/profile.jpg
+            </div>
+
+            <h3>Your Name</h3>
+            <p>UX/UI Designer, Product Designer, CRO Designer</p>
+
+            <div class="skills">
+              <span class="tag">Figma</span>
+              <span class="tag">Framer</span>
+              <span class="tag">Webflow</span>
+              <span class="tag">Shopify</span>
+              <span class="tag">UX Research</span>
+              <span class="tag">Prototyping</span>
+            </div>
+          </aside>
+
+          <div class="about-content reveal">
+            <div class="eyebrow">About Me</div>
+
+            <h2>I combine product thinking, visual design, and conversion strategy.</h2>
+
+            <p>
+              I am a UX/UI and Product Designer focused on creating digital experiences that are easy to understand, easy to use, and built around measurable business outcomes.
+            </p>
+
+            <p>
+              My work sits at the intersection of interface design, user behavior, conversion strategy, and implementation. I care about clean visuals, but I care even more about whether users know what to do next.
+            </p>
+
+            <p>
+              Replace this paragraph with your real story. Mention your strongest niche, your best type of client, your design process, and the kind of outcomes your work creates.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#work" class="btn btn-primary">See My Work</a>
+              <a href="mailto:your@email.com" class="btn btn-secondary">Email Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="eyebrow">Testimonials</div>
+          <h2 class="section-title">What clients and teams say.</h2>
+          <p class="section-copy">
+            Replace these with real testimonials when you have them. Until then, use them as layout placeholders only.
+          </p>
+        </div>
+
+        <div class="testimonials">
+          <article class="testimonial reveal">
+            <p class="quote">
+              “The redesign made our product easier to understand. The final design felt premium, clear, and much easier for customers to buy from.”
+            </p>
+
+            <div class="person">
+              <div class="avatar">A</div>
+              <div>
+                <strong>Client Name</strong>
+                <span>Founder, Ecommerce Brand</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <p class="quote">
+              “The process was thoughtful from audit to handoff. Every design decision had a clear reason behind it.”
+            </p>
+
+            <div class="person">
+              <div class="avatar">M</div>
+              <div>
+                <strong>Client Name</strong>
+                <span>Product Lead, SaaS Company</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial reveal">
+            <p class="quote">
+              “Strong eye for layout, hierarchy, and conversion. The page immediately became easier to scan and easier to act on.”
+            </p>
+
+            <div class="person">
+              <div class="avatar">S</div>
+              <div>
+                <strong>Client Name</strong>
+                <span>Marketing Manager</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact-grid">
+            <div>
+              <div class="eyebrow">Contact</div>
+
+              <h2>Have a product, website, or store that needs better UX?</h2>
+
+              <p>
+                Send me a message with your project details. I can help with UX audits, interface design, redesigns, landing pages, product flows, and conversion-focused ecommerce pages.
+              </p>
+
+              <div class="hero-actions">
+                <a href="mailto:your@email.com" class="btn btn-primary">your@email.com</a>
+                <a href="#" class="btn btn-secondary">Download Resume</a>
+              </div>
+            </div>
+
+            <div class="contact-panel">
+              <div class="contact-row">
+                <span>Email</span>
+                <strong>your@email.com</strong>
+              </div>
+
+              <div class="contact-row">
+                <span>LinkedIn</span>
+                <strong>linkedin.com/in/yourname</strong>
+              </div>
+
+              <div class="contact-row">
+                <span>Twitter/X</span>
+                <strong>@yourhandle</strong>
+              </div>
+
+              <div class="contact-row">
+                <span>Location</span>
+                <strong>Your City, Your Country</strong>
+              </div>
+
+              <div class="contact-row">
+                <span>Availability</span>
+                <strong>Open to freelance, contract, and full-time roles</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+
+      <div class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#services">Expertise</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+    const revealItems = document.querySelectorAll(".reveal");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    if (savedTheme) {
+      html.setAttribute("data-theme", savedTheme);
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = html.getAttribute("data-theme");
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+      html.setAttribute("data-theme", nextTheme);
+      localStorage.setItem("portfolio-theme", nextTheme);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        projectCards.forEach((card) => {
+          const shouldShow = filter === "all" || card.dataset.category === filter;
+          card.style.display = shouldShow ? "" : "none";
+        });
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>

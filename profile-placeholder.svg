@@ -1,0 +1,10 @@
+<svg width="900" height="1000" viewBox="0 0 900 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile photo placeholder">
+  <rect width="900" height="1000" rx="50" fill="#0D1220"/>
+  <circle cx="200" cy="180" r="220" fill="#22D3EE" opacity="0.18"/>
+  <circle cx="760" cy="860" r="260" fill="#8B5CF6" opacity="0.18"/>
+  <rect x="90" y="90" width="720" height="820" rx="44" fill="white" opacity="0.06" stroke="white" stroke-opacity="0.16"/>
+  <circle cx="450" cy="340" r="130" fill="white" opacity="0.12"/>
+  <path d="M220 770C245 620 330 535 450 535C570 535 655 620 680 770" fill="white" opacity="0.12"/>
+  <text x="450" y="880" text-anchor="middle" fill="#F7F8FB" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">Your Photo</text>
+  <text x="450" y="930" text-anchor="middle" fill="#AAB2C5" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600">Replace with profile.jpg</text>
+</svg>

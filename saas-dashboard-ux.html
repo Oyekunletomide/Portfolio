@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SaaS Dashboard UX Case Study | Tomide Oyekunle</title>
+  <meta name="description" content="A SaaS dashboard UX/UI case study covering information architecture, visual hierarchy, data grouping, empty states, and reusable design system components." />
+  <meta name="author" content="Tomide Oyekunle" />
+  <meta name="theme-color" content="#070A12" />
+
+  <meta property="og:title" content="SaaS Dashboard UX Case Study | Tomide Oyekunle" />
+  <meta property="og:description" content="A SaaS dashboard UX/UI case study covering information architecture, visual hierarchy, data grouping, empty states, and reusable design system components." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="../assets/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SaaS Dashboard UX Case Study | Tomide Oyekunle" />
+  <meta name="twitter:description" content="A SaaS dashboard UX/UI case study covering information architecture, visual hierarchy, data grouping, empty states, and reusable design system components." />
+  <meta name="twitter:image" content="../assets/og-image.png" />
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="../index.html" class="logo" aria-label="Go to homepage">
+      <span class="logo-mark">TO</span>
+      <span>Tomide Oyekunle</span>
+    </a>
+
+    <ul class="nav-links" data-nav-links>
+      <li><a class="active" href="../index.html#work">Work</a></li>
+      <li><a class="" href="../index.html#process">Process</a></li>
+      <li><a class="" href="../index.html#services">Expertise</a></li>
+      <li><a class="" href="../index.html#about">About</a></li>
+      <li><a class="" href="../index.html#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle color theme">◐</button>
+      <a href="../index.html#contact" class="btn btn-primary">Hire Me</a>
+      <button class="icon-btn menu-btn" data-menu-button aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="back-link">
+        <a href="../index.html#work" class="btn btn-secondary">← Back to Work</a>
+      </div>
+
+      <div class="page-hero-grid">
+        <div data-reveal>
+          <div class="eyebrow">SaaS Case Study</div>
+          <h1>Designing a dashboard experience for faster decision-making.</h1>
+          <p class="hero-copy">Use this case study for SaaS, admin tools, analytics dashboards, client portals, or product interfaces.</p>
+        </div>
+
+        <div class="page-meta-grid" data-reveal>
+          <div class="info-card">
+            <strong>Product Designer</strong>
+            <span>Role</span>
+          </div>
+          <div class="info-card">
+            <strong>SaaS / B2B Product</strong>
+            <span>Industry</span>
+          </div>
+          <div class="info-card">
+            <strong>3 to 5 weeks</strong>
+            <span>Timeline</span>
+          </div>
+          <div class="info-card">
+            <strong>Figma, FigJam, Design System</strong>
+            <span>Tools</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <figure class="case-image" data-reveal>
+        <img src="../assets/project-saas-dashboard.svg" alt="SaaS Dashboard UX Case Study hero placeholder" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container case-study-body">
+      <aside class="case-sidebar" data-reveal>
+        <div class="sidebar-card">
+          <span>Project Type</span>
+          <strong>SaaS / B2B Product</strong>
+        </div>
+
+        <div class="sidebar-card">
+          <span>Main Focus</span>
+          <strong>Clarity, usability, and conversion</strong>
+        </div>
+
+        <div class="sidebar-card">
+          <span>Replace With</span>
+          <strong>Real screenshots, data, and client details</strong>
+        </div>
+
+        <a href="../index.html#contact" class="btn btn-primary">Discuss Similar Project</a>
+      </aside>
+
+      <div class="article-stack">
+        <article class="article-section" data-reveal>
+          <h2>Overview</h2>
+          <p>
+            The dashboard contained useful data, but users could not quickly tell what needed attention. There was weak grouping, unclear priority, and inconsistent component patterns.
+          </p>
+
+          <div class="result-grid">
+              <div class="result-card">
+                <strong>-32%</strong>
+                <span>Placeholder time-to-insight</span>
+              </div>
+              <div class="result-card">
+                <strong>+24%</strong>
+                <span>Task completion</span>
+              </div>
+              <div class="result-card">
+                <strong>12</strong>
+                <span>Reusable UI components</span>
+              </div>
+          </div>
+        </article>
+
+        <article class="article-section" data-reveal>
+          <h2>Goals</h2>
+          <ul>
+            <li>Improve dashboard scanability and information grouping.</li>
+<li>Create a clear visual hierarchy for metrics, alerts, and next actions.</li>
+<li>Design reusable components for cards, tables, filters, states, and navigation.</li>
+<li>Reduce cognitive load for users reviewing data under time pressure.</li>
+          </ul>
+        </article>
+
+        <article class="article-section" data-reveal>
+          <h2>Research and audit findings</h2>
+          <p>
+            Before designing, I looked for points where users could misunderstand the value, lose confidence, or miss the next action.
+          </p>
+
+          <ul>
+            <li>Mapped the main jobs users needed to complete inside the dashboard.</li>
+<li>Audited existing navigation, metric hierarchy, table design, filters, and empty states.</li>
+<li>Grouped information based on user priority, not internal team structure.</li>
+<li>Reviewed edge cases including loading, empty, error, and permission states.</li>
+          </ul>
+        </article>
+
+        <article class="article-section" data-reveal>
+          <h2>Design decisions</h2>
+          <p>
+            The final design direction was focused on reducing decision friction and making the next step obvious.
+          </p>
+
+          <ul>
+            <li>Created a dashboard hierarchy that separates overview, insights, and actions.</li>
+<li>Used metric cards for high-level status and tables for deeper inspection.</li>
+<li>Designed reusable filter and table patterns for future product screens.</li>
+<li>Improved empty states with guidance and next-step actions.</li>
+<li>Built a small design system foundation for consistency.</li>
+          </ul>
+        </article>
+
+        <article class="article-section" data-reveal>
+          <h2>Wireframes and final UI</h2>
+          <p>
+            Replace these placeholders with your Figma wireframes, user flow screenshots, and polished final UI screens.
+          </p>
+
+          <div class="gallery-grid" style="margin-top: 22px;">
+            <img src="../assets/case-wireframes.svg" alt="Wireframes placeholder" />
+            <img src="../assets/case-final-ui.svg" alt="Final UI placeholder" />
+          </div>
+        </article>
+
+        <article class="article-section" data-reveal>
+          <h2>Result and lesson</h2>
+          <p>
+            A good dashboard does not show everything equally. It helps users know what matters now and what action to take next.
+          </p>
+
+          <p style="margin-top: 16px;">
+            Important: replace placeholder numbers with real analytics, client-approved results, or honest qualitative outcomes. If there is no live data yet, label the result as a design hypothesis or expected impact.
+          </p>
+        </article>
+
+        <article class="article-section" data-reveal>
+          <h2>What I would test next</h2>
+          <ul>
+            <li>Hero headline clarity against the original version.</li>
+            <li>CTA copy and placement across desktop and mobile.</li>
+            <li>Social proof position and format.</li>
+            <li>Section order based on user scroll behavior.</li>
+            <li>Mobile friction around the final conversion step.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p>© <span data-year></span> Tomide Oyekunle. All rights reserved.</p>
+
+    <div class="footer-links">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#process">Process</a>
+      <a href="../index.html#services">Expertise</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/script.js"></script>
+</body>
+</html>
